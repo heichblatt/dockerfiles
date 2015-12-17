@@ -8,7 +8,7 @@ RUN yum install -y openssh-server \
 RUN yum group install -y "Development Tools" && \
     yum clean all
 RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd
-RUN mkdir -pv /var/run/sshd
+RUN mkdir -pv /var/run/sshd /jenkins
 
 RUN adduser jenkins
 RUN echo "jenkins:jenkins" | chpasswd
