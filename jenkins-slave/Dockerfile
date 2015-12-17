@@ -2,7 +2,8 @@ FROM oraclelinux:7
 MAINTAINER heichblatt
 
 RUN yum install -y openssh-server \
-      java-1.7.0-openjdk && \
+      java-1.7.0-openjdk \
+      git && \
     yum clean all
 RUN yum group install -y "Development Tools" && \
     yum clean all
