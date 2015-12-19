@@ -1,6 +1,8 @@
 FROM oraclelinux:7
 MAINTAINER heichblatt
 
+RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm &&
+    yum clean all
 RUN yum install -y openssh-server \
       java-1.7.0-openjdk \
       git && \
