@@ -7,4 +7,4 @@ for c in rsa ecdsa ed25519 ; do
 done
 
 echo Starting SSHd.
-/usr/sbin/sshd -D
+exec /usr/sbin/sshd -D
