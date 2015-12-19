@@ -6,7 +6,8 @@ RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.n
 RUN yum install -y openssh-server \
       java-1.7.0-openjdk \
       git \
-      wget && \
+      wget \
+      pv && \
     yum clean all
 RUN yum group install -y "Development Tools" && \
     yum clean all
