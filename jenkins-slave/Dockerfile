@@ -20,3 +20,6 @@ RUN echo "jenkins:jenkins" | chpasswd
 EXPOSE 22
 COPY ./entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
+
+USER jenkins
+WORKDIR /home/jenkins
