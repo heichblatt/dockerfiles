@@ -6,7 +6,8 @@ ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 RUN yum install -y rubygems ruby-devel gcc make nodejs && \
-    gem install --verbose --no-rdoc --no-ri jekyll pygments.rb RedCloth && \
+    gem install --verbose --no-rdoc --no-ri jekyll pygments.rb && \
+    gem install RedCloth --version 4.2.2 && \
     yum remove -y gcc make ruby-devel && \
     yum clean all
 
