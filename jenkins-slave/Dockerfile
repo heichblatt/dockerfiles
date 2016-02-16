@@ -11,8 +11,3 @@ RUN yum install -y java-1.7.0-openjdk \
 RUN yum group install -y "Development Tools" && \
     yum clean all
 RUN mkdir -pv /jenkins
-
-RUN adduser jenkins
-RUN echo "jenkins:jenkins" | chpasswd
-
-USER jenkins
