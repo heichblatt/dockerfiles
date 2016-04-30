@@ -1,7 +1,7 @@
 FROM base/archlinux
 MAINTAINER heichblatt
 
-# Update, install yaourt and base-devel (incl. sudo), allow sudo for %users
+# Update, install base-devel (incl. sudo), allow sudo for %users
 RUN /usr/sbin/pacman-key --refresh-keys && \
     /usr/sbin/pacman -Syu --noconfirm && \
     /usr/sbin/pacman-db-upgrade && \
