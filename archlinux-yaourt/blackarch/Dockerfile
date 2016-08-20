@@ -1,4 +1,4 @@
-FROM base/archlinux
+FROM heichblatt/archlinux-yaourt
 MAINTAINER heichblatt
 
 ENV SRC_DIR=/usr/src/blackarch-keyring
