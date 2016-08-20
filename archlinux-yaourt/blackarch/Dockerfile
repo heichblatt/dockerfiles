@@ -12,3 +12,5 @@ RUN cd /tmp/ && \
     /usr/bin/rm -v /tmp/strap.sh && \
     /usr/bin/pacman -Scc --noconfirm
 USER user
+
+CMD ["/usr/bin/bash"]
