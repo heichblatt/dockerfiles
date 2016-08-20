@@ -2,10 +2,14 @@ FROM base/archlinux
 MAINTAINER heichblatt
 
 # Update, install base-devel (incl. sudo), allow sudo for %users
-RUN /usr/sbin/pacman-key --refresh-keys && \
-    /usr/sbin/pacman -Syu --noconfirm && \
-    /usr/sbin/pacman-db-upgrade && \
-    /usr/sbin/pacman -Syy --noconfirm --needed base-devel perl && \
+RUN echo "keyserver-options auto-key-retrieve" >> /etc/pacman.d/gnupg/gpg.conf && \
+    pacman-key --init && \
+    pacman-key --populate archlinux && \
+    /usr/bin/pacman -Sy --noconfirm archlinux-keyring && \
+    /usr/bin/pacman -Su --noconfirm && \
+    /usr/bin/pacman-db-upgrade && \
+    /usr/bin/pacman -S --noconfirm ca-certificates ca-certificates-mozilla && \
+    /usr/bin/pacman -S --noconfirm base-devel git sudo && \
     /usr/sbin/pacman -Scc --noconfirm && \
     /usr/sbin/sudo /usr/sbin/ln -sv /usr/bin/core_perl/pod2man /usr/sbin && \
     /usr/sbin/sed -i -e "s/Defaults    requiretty.*/ #Defaults    requiretty/g" /etc/sudoers && \
