@@ -1,5 +1,4 @@
-#FROM heichblatt/archlinux-yaourt
-FROM local/archlinux-yaourt
+FROM heichblatt/archlinux-yaourt
 MAINTAINER heichblatt
 
 ENV SHA256SUM 4b1d939659e26ddc4bc1588a57e20da9be5cc6d80ae0507b19f41ef44725fced
