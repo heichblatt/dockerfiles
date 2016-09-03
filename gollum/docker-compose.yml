@@ -1,0 +1,4 @@
+gollum:
+  build: .
+  volumes:
+    - ./repo:/repo
