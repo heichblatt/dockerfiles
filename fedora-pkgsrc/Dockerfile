@@ -11,6 +11,6 @@ RUN /bin/curl -O http://ftp.netbsd.org/pub/pkgsrc/stable/pkgsrc.tar.gz && \
 WORKDIR /usr/pkgsrc/bootstrap
 RUN ./bootstrap
 RUN echo PATH=\$PATH:/usr/pkg/bin >> ~/.bashrc
-RUN /usr/pkg/sbin/pkg_admin -K /var/db/pkg fetch-pkg-vulnerabilities
+RUN /usr/pkg/sbin/pkg_admin -K /usr/pkg/pkgdb fetch-pkg-vulnerabilities
 
 ENTRYPOINT ["/usr/bin/bash"]
