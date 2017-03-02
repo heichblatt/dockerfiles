@@ -1,6 +1,10 @@
 FROM base/archlinux
 MAINTAINER heichblatt
 
+# Workaround for wrong permissions in base image
+# https://github.com/archimg/archlinux/issues/6
+RUN /usr/bin/chmod -v 1777 /tmp
+
 # Update, install base-devel (incl. sudo), allow sudo for %users
 RUN echo "keyserver-options auto-key-retrieve" >> /etc/pacman.d/gnupg/gpg.conf && \
     pacman-key --init && \
