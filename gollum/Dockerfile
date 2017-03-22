@@ -3,7 +3,7 @@ MAINTAINER heichblatt
 
 RUN /usr/bin/yum install -y deltarpm && \
     /usr/bin/yum group install -y "Development Tools" && \
-    /usr/bin/yum install -y yum install ruby ruby-devel libicu \
+    /usr/bin/yum install -y yum install ruby ruby-devel libicu cmake \
       libicu-devel zlib zlib-devel which && \
     /usr/bin/yum clean all
 RUN /usr/bin/gem install --no-ri --no-rdoc redcarpet RedCloth
