@@ -5,9 +5,11 @@ ENV LANGUAGE en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-RUN yum install -y rubygems ruby-devel gcc make nodejs && \
-    gem install --verbose --no-rdoc --no-ri jekyll pygments.rb && \
-    gem install RedCloth --version 4.2.2 && \
+RUN yum install -y epel-release centos-release-scl gcc make nodejs && \
+    yum install -y rh-ruby22 rh-ruby22-ruby-devel && \
+    scl enable rh-ruby22 'bash -c " \
+        gem install --verbose --no-rdoc --no-ri jekyll pygments.rb && \
+        gem install RedCloth --version 4.2.2"' && \
     yum remove -y gcc make ruby-devel && \
     yum clean all
 
