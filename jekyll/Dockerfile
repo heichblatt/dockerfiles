@@ -1,20 +1,26 @@
-FROM centos:7
+FROM alpine:latest
 MAINTAINER heichblatt
 
 ENV LANGUAGE en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-RUN yum install -y epel-release centos-release-scl gcc make nodejs && \
-    yum install -y rh-ruby22 rh-ruby22-ruby-devel && \
-    scl enable rh-ruby22 'bash -c " \
-        gem install --verbose --no-rdoc --no-ri jekyll pygments.rb && \
-        gem install RedCloth --version 4.2.2"' && \
-    yum remove -y gcc make ruby-devel && \
-    yum clean all
+# Heavily influenced by
+# https://github.com/inadarei/alpine-jekyll/blob/master/Dockerfile
+RUN apk update && \
+    apk add libatomic readline readline-dev libxml2 libxml2-dev \
+        ncurses-terminfo-base ncurses-terminfo \
+        libxslt libxslt-dev zlib-dev zlib \
+        ruby ruby-dev yaml yaml-dev \
+        libffi-dev build-base git nodejs \
+        ruby-io-console ruby-irb ruby-json ruby-rake && \
+    gem install --no-ri --no-rdoc jekyll && \
+    apk del build-base zlib-dev ruby-dev readline-dev \
+        yaml-dev libffi-dev libxml2-dev && \
+    rm -rf /root/src /tmp/* /usr/share/man /var/cache/apk/*
 
 VOLUME ["/target"]
 WORKDIR /target
 EXPOSE 4000
 CMD ["serve", "--host=0.0.0.0"]
-ENTRYPOINT ["/usr/local/bin/jekyll"]
+ENTRYPOINT ["jekyll"]
