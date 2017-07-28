@@ -45,6 +45,6 @@ if [ -z "$1" ] ; then
 	log No command to run, tailing ${TOR_LOG}.
 	sudo tail -f ${TOR_LOG}
 else
-	log Running: torify bash -c "$*"
-	torify bash -c "$*"
+	log Running: bash -c \"$*\"
+	bash -c "$*"
 fi
