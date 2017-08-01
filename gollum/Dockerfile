@@ -1,16 +1,13 @@
-FROM centos:7
+FROM alpine:latest
 MAINTAINER heichblatt
 
-RUN /usr/bin/yum install -y deltarpm && \
-    /usr/bin/yum group install -y "Development Tools" && \
-    /usr/bin/yum install -y yum install ruby ruby-devel libicu cmake \
-      libicu-devel zlib zlib-devel which && \
-    /usr/bin/yum clean all
-RUN /usr/bin/gem install --no-ri --no-rdoc redcarpet RedCloth
-RUN /usr/bin/gem install --no-ri --no-rdoc --verbose gollum
-RUN /usr/sbin/groupadd --gid 1000 gollum
-RUN /usr/sbin/adduser --uid 1000 --gid 1000 --home /repo gollum
+RUN apk update && \
+    apk add ruby ruby-dev ruby-rake ruby-rdoc \
+        libffi-dev build-base git zlib-dev icu-dev && \
+    gem install --no-ri --no-rdoc gollum && \
+    apk del build-base ruby-dev && \
+    rm -rf /root/src /tmp/* /usr/share/man /var/cache/apk/*
+
 WORKDIR /repo
-USER gollum
 EXPOSE 4567
-CMD ["/usr/local/bin/gollum"]
+CMD ["/usr/bin/gollum"]
