@@ -4,9 +4,9 @@ OLDPWD="$PWD"
 
 for df in $(find . -name Dockerfile) ; do
         image=$(dirname "$df"|cut -d\/ -f2-)
-        echo Building "$image"..
+        echo Pushing "$image"..
         cd "$image"
-        docker build --rm --no-cache --pull=true -t local/"$image" . || ERRORS="$ERRORS $df"
+        ( docker tag local/"$image" heichblatt/"$image" && docker push heichblatt/"$image" ) || ERRORS="$ERRORS $df"
         cd "$OLDPWD"
 done
 
