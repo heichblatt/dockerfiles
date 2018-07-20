@@ -1,7 +1,7 @@
 FROM heichblatt/archlinux-yaourt
 MAINTAINER heichblatt
 
-ENV SHA256SUM a3078417cc21e0e3e6fd352f1e4b790f7f94adf5422aa00e2c43d7b9fc493a9e
+ENV SHA256SUM 1ef8e5471d1ba7b4be31e5e81abab14cd4c89c1f31f3a8df9a313b7d1fa88971
 USER root
 
 RUN cd /tmp/ && \
