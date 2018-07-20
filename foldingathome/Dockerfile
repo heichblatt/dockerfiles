@@ -6,4 +6,5 @@ ENV RPM_URL https://download.foldingathome.org/releases/public/release/fahclient
 RUN /usr/bin/yum install -y ${RPM_URL} && \
     /usr/bin/yum clean all
 VOLUME ["/var/lib/fahclient", "/etc/fahclient"]
-ENTRYPOINT ["/usr/bin/FAHClient", "--fold-anon"]
+ENTRYPOINT [ "/usr/bin/FAHClient" ]
+CMD [ "--fold-anon" ]
