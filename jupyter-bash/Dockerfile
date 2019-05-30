@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stable
 LABEL maintainer="heichblatt"
 
 
