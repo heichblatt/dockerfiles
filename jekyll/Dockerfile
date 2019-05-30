@@ -1,5 +1,6 @@
 FROM alpine:latest
-MAINTAINER heichblatt
+LABEL maintainer="heichblatt"
+
 
 ENV LANGUAGE en_US.UTF-8
 ENV LANG en_US.UTF-8

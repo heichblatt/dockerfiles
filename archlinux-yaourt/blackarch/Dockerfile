@@ -1,5 +1,6 @@
 FROM heichblatt/archlinux-yaourt
-MAINTAINER heichblatt
+LABEL maintainer="heichblatt"
+
 
 ENV SHA256SUM 1ef8e5471d1ba7b4be31e5e81abab14cd4c89c1f31f3a8df9a313b7d1fa88971
 USER root

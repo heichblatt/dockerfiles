@@ -1,5 +1,6 @@
 FROM base/archlinux
-MAINTAINER heichblatt
+LABEL maintainer="heichblatt"
+
 
 # Workaround for wrong permissions in base image
 # https://github.com/archimg/archlinux/issues/6

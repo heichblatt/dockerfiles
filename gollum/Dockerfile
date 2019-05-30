@@ -1,5 +1,6 @@
 FROM alpine:latest
-MAINTAINER heichblatt
+LABEL maintainer="heichblatt"
+
 
 RUN apk update && \
     apk add ruby ruby-dev ruby-rake ruby-rdoc \

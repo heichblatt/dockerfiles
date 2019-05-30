@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER heichblatt
+LABEL maintainer="heichblatt"
 
 RUN /usr/bin/yum install -y centos-release-scl && \
     /usr/bin/yum install -y git \

@@ -1,5 +1,6 @@
 FROM debian:stretch
-MAINTAINER heichblatt
+LABEL maintainer="heichblatt"
+
 
 RUN apt-get update \
     && apt-get install -y \

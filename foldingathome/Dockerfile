@@ -1,5 +1,6 @@
 FROM ubuntu:latest
-MAINTAINER heichblatt
+LABEL maintainer="heichblatt"
+
 
 ADD https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.5/fahclient_7.5.1_amd64.deb /tmp/fahclient.deb
 

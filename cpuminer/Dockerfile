@@ -1,5 +1,6 @@
 FROM centos:latest
-MAINTAINER heichblatt
+LABEL maintainer="heichblatt"
+
 
 ENV LC_ALL en_US.UTF-8
 RUN /usr/bin/yum install -y git automake gcc make curl-devel jansson-devel && \

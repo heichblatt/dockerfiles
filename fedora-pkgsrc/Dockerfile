@@ -1,5 +1,6 @@
 FROM fedora:latest
-MAINTAINER heichblatt
+LABEL maintainer="heichblatt"
+
 
 RUN /bin/dnf install -y deltarpm tar && \
     /bin/dnf groupinstall -y  "Development Tools" && \
