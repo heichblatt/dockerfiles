@@ -1,1 +1,0 @@
-# Arch Linux with [yaourt](https://aur.archlinux.org/packages/yaourt/) and [BlackArch](https://www.blackarch.org)
