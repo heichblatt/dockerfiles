@@ -56,11 +56,4 @@ build-foldingathome:
   only:
     changes:
       - foldingathome/**/*
-      
-build-wpscan:
-  stage: build
-  script:
-    - cd wpscan ; docker build -t local/wpscan .
-  only:
-    changes:
-      - wpscan/**/*
+
