@@ -1,43 +1,66 @@
 stages:
   - build
 
-
 build-jekyll:
   stage: build
   script:
     - cd jekyll ; docker build -t local/jekyll .
-
+  only:
+    changes:
+      - jekyll/**/*
+      
 build-jupyter-bash:
   stage: build
   script:
     - cd jupyter-bash ; docker build -t local/jupyter-bash .
-
+  only:
+    changes:
+      - jupyter-bash/**/*
+      
 build-latexmk:
   stage: build
   script:
     - cd latexmk ; docker build -t local/latexmk .
-
+  only:
+    changes:
+      - latexmk/**/*
+      
 build-archlinux-yaourt:
   stage: build
   script:
     - cd archlinux-yaourt ; docker build -t local/archlinux-yaourt .
-
+  only:
+    changes:
+      - archlinux-yaourt/**/*
+      
 build-gollum:
   stage: build
   script:
     - cd gollum ; docker build -t local/gollum .
-
+  only:
+    changes:
+      - gollum/**/*
+      
 build-fedora-pkgsrc:
   stage: build
   script:
     - cd fedora-pkgsrc ; docker build -t local/fedora-pkgsrc .
-
+  only:
+    changes:
+      - pkgsrc/**/*
+      
 build-foldingathome:
   stage: build
   script:
     - cd foldingathome ; docker build -t local/foldingathome .
-
+  only:
+    changes:
+      - foldingathome/**/*
+      
 build-wpscan:
   stage: build
   script:
     - cd wpscan ; docker build -t local/wpscan .
+  only:
+    changes:
+      - wpscan/**/*
