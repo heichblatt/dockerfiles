@@ -13,7 +13,7 @@ RUN apk update && \
         ncurses-terminfo-base ncurses-terminfo \
         libxslt libxslt-dev zlib-dev zlib \
         ruby ruby-dev yaml yaml-dev \
-        libffi-dev build-base git nodejs \
+        libffi-dev build-base git nodejs ruby-bundler \
         ruby-io-console ruby-irb ruby-json ruby-rake ruby-bigdecimal ruby-ffi && \
     gem install --no-ri --no-rdoc jekyll && \
     apk del build-base zlib-dev ruby-dev readline-dev \
