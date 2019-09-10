@@ -14,7 +14,7 @@ RUN apk update && \
         libxslt libxslt-dev zlib-dev zlib \
         ruby ruby-dev yaml yaml-dev \
         libffi-dev build-base git nodejs \
-        ruby-io-console ruby-irb ruby-json ruby-rake && \
+        ruby-io-console ruby-irb ruby-json ruby-rake ruby-bigdecimal ruby-ffi && \
     gem install --no-ri --no-rdoc jekyll && \
     apk del build-base zlib-dev ruby-dev readline-dev \
         yaml-dev libffi-dev libxml2-dev && \
