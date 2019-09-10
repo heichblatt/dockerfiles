@@ -16,7 +16,7 @@ RUN apk update && \
         libffi-dev build-base git nodejs ruby-bundler \
         ruby-io-console ruby-irb ruby-json ruby-rake ruby-bigdecimal ruby-ffi && \
     gem install --no-ri --no-rdoc jekyll && \
-    apk del build-base zlib-dev ruby-dev readline-dev \
+    apk del zlib-dev readline-dev \
         yaml-dev libffi-dev libxml2-dev && \
     rm -rf /root/src /tmp/* /usr/share/man /var/cache/apk/*
 
