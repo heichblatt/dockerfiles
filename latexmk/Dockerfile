@@ -12,6 +12,12 @@ RUN /bin/dnf install -y texlive \
       texlive-preprint \
       texlive-dinbrief \
       texlive-wrapfig \
+      texlive-gfsbodoni \
+      texlive-gfsdidot \
+      texlive-greek-fontenc \
+      texlive-babel-greek \
+      texlive-cbfonts \
+      texlive-cbfonts-fd \
       latexmk && \
     /bin/dnf clean all
 RUN /bin/mkdir -pv /target
